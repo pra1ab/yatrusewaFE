@@ -43,7 +43,7 @@ const SignIn = () => {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-6 max-w-md mx-auto">
       <h1 className="text-2xl font-bold text-center mb-2">Sign In</h1>
       <p className="text-center text-gray-600 mb-6">Enter your email and password to Sign In to your account.</p>
 
@@ -64,15 +64,10 @@ const SignIn = () => {
           />
         </div>
 
-        <div className="mb-6">
-          <div className="flex justify-between items-center mb-1">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <Link to="/forgot-password" className="text-sm text-blue-600 hover:underline">
-              Forgot password?
-            </Link>
-          </div>
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+            Password
+          </label>
           <input
             type="password"
             id="password"
@@ -81,6 +76,12 @@ const SignIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+        </div>
+
+        <div className="mb-6 text-right">
+          <Link to="/forgot-password" className="text-sm text-blue-600 hover:underline font-medium">
+            Forgot password?
+          </Link>
         </div>
 
         <button
@@ -94,7 +95,7 @@ const SignIn = () => {
 
       <div className="mt-4 text-center">
         Don't have an account?{" "}
-        <Link to="/signup" className="text-blue-600 hover:underline">
+        <Link to="/signup" className="text-blue-600 hover:underline font-medium">
           Sign Up
         </Link>
       </div>
