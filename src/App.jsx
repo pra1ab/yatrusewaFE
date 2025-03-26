@@ -6,7 +6,7 @@ import { useEffect } from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-// Auth Pages
+// Auth Pages (matching the provided designs)
 import SignIn from "./pages/auth/SignIn"
 import SignUp from "./pages/auth/SignUp"
 import ForgotPassword from "./pages/auth/ForgotPassword"
@@ -29,7 +29,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          {/* Auth Routes */}
+          {/* Auth Routes (matching the provided designs) */}
           <Route element={<AuthLayout />}>
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
