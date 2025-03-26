@@ -6,15 +6,21 @@ import { useEffect } from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
-// Auth Pages (matching the provided designs)
+// Auth Pages
 import SignIn from "./pages/auth/SignIn"
 import SignUp from "./pages/auth/SignUp"
 import ForgotPassword from "./pages/auth/ForgotPassword"
 import TwoStepVerification from "./pages/auth/TwoStepVerification"
 import SuccessPage from "./pages/auth/SuccessPage"
 
+// Static Pages
+import HomePage from "./pages/HomePage"
+import AboutPage from "./pages/AboutPage"
+import ContactPage from "./pages/ContactPage"
+
 // Layout Components
 import AuthLayout from "./layouts/AuthLayout"
+import MainLayout from "./layouts/MainLayout"
 
 function App() {
   useEffect(() => {
@@ -29,7 +35,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          {/* Auth Routes (matching the provided designs) */}
+          {/* Auth Routes */}
           <Route element={<AuthLayout />}>
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
@@ -38,8 +44,15 @@ function App() {
             <Route path="/success" element={<SuccessPage />} />
           </Route>
 
-          {/* Default route redirects to sign in */}
-          <Route path="*" element={<SignIn />} />
+          {/* Main Routes */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Route>
+
+          {/* Default route redirects to home */}
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </Router>
     </AuthProvider>
